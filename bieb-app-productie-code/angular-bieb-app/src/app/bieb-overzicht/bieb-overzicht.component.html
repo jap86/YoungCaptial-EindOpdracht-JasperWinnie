@@ -1,0 +1,10 @@
+<table>
+  <tr *ngFor="let Bieb of biebOverzicht">
+    <td>{{Bieb.biebNaam}}</td>
+    <td>{{Bieb.straat}}</td>
+    <td>{{Bieb.nummer}}</td>
+    <td>{{Bieb.plaats}}</td>
+    <td> {{Bieb.beheerder}}</td>
+    <td><button (click)="delete(Bieb.id)">del</button></td>
+  </tr>
+</table>
