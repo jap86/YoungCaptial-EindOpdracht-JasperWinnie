@@ -1,0 +1,9 @@
+<form [formGroup]="voegBiebToeForm" (ngSubmit)="saveBieb($event)">
+  <input formControlName="biebNaam" type="text" placeholder="Naam Bieb"><br>
+  <input formControlName="straat" type="text" placeholder="Straat">
+  <input formControlName="nummer" type="text" placeholder="Nummer"><br>
+  <input formControlName="plaats" type="text" placeholder="Plaats"><br>
+  <input formControlName="beheerder" type="text" placeholder="Beheerder"><br>
+  <button type="submit">Voeg Toe!</button>
+</form>
+

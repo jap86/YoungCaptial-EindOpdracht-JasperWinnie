@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BiebService extends CrudRepository<Bieb, Integer> {
+public interface VoegBiebToeFormService extends CrudRepository<Bieb, Integer> {
 }
