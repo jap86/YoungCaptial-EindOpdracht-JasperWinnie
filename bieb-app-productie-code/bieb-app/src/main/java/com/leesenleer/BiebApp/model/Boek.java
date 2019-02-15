@@ -10,7 +10,7 @@ public class Boek {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String naam;
+    private String titel;
     private String auteur;
     private int jaarVanUitgave;
     private int aantalBladzijden;
@@ -19,12 +19,16 @@ public class Boek {
         return id;
     }
 
-    public String getNaam() {
-        return naam;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public String getTitel() {
+        return titel;
+    }
+
+    public void setTitel(String titel) {
+        this.titel = titel;
     }
 
     public String getAuteur() {
@@ -49,5 +53,16 @@ public class Boek {
 
     public void setAantalBladzijden(int aantalBladzijden) {
         this.aantalBladzijden = aantalBladzijden;
+    }
+
+    @Override
+    public String toString() {
+        return "Boek{" +
+                "id=" + id +
+                ", titel='" + titel + '\'' +
+                ", auteur='" + auteur + '\'' +
+                ", jaarVanUitgave=" + jaarVanUitgave +
+                ", aantalBladzijden=" + aantalBladzijden +
+                '}';
     }
 }

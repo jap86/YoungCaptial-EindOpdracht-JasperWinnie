@@ -38,4 +38,8 @@ public class BiebController {
     public List<Bieb> findAll() {
         return (List<Bieb>) voegBiebToeFormService.findAll();
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/bieb/{id}", method = RequestMethod.GET)
+    public Bieb getBieb(int id){return voegBiebToeFormService.findById(id).get(); }
 }
