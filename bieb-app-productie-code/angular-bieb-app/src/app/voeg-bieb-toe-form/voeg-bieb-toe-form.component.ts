@@ -37,10 +37,7 @@ export class VoegBiebToeFormComponent implements OnInit {
     const plaats = this.voegBiebToeForm.controls['plaats'].value;
     const beheerder = this.voegBiebToeForm.controls['beheerder'].value;
 
-    this.voegBiebToeFormService.saveBieb(new Bieb(0, biebNaam, straat, nummer, plaats, beheerder)).subscribe(
-      () => this.biebOverzicht.getAllBiebs()
-    );
-  }
+    this.voegBiebToeFormService.saveBieb(new Bieb(0, biebNaam, straat, nummer, plaats, beheerder)).subscribe();}
 
 
 }

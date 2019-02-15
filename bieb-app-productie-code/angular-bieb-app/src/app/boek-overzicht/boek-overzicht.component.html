@@ -1,0 +1,11 @@
+<table>
+  <tr *ngFor="let Boek of boekOverzicht">
+    <td>{{Boek.titel}}</td>
+    <td>{{Boek.auteur}}</td>
+    <td>{{Boek.jaarVanUitgave}}</td>
+    <td>{{Boek.aantalBladzijden}}</td>
+    <td><button (click)="delete(Boek.id)">del</button></td>
+   </tr>
+</table>
+
+<a routerLink="/menu">Menu</a>
