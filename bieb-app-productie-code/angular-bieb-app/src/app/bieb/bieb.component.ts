@@ -9,16 +9,29 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./bieb.component.css']
 })
 export class BiebComponent implements OnInit {
-  @Input() bieb: Bieb;
+  bieb: Bieb;
 
   constructor(
     private biebService: BiebService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+  }
 
-  ngOnInit() {}
+   ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.biebService.get(id).subscribe(bieb => {
+      this.getBieb(id)
+    })
+      }
 
-  getBieb(id): void {
-    this.biebService.get(id)
-      .subscribe();
+  getBieb(id: number): void {
+    this.biebService.get(id).subscribe(
+      bieb => {
+        this.bieb = bieb;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
   }
 }

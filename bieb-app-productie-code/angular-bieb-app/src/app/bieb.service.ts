@@ -11,11 +11,11 @@ export class BiebService {
 
   constructor(private http: HttpClient) { }
 
-  get(id) {
-    return this.http.get('http://localhost:8080/bieb/' + id).pipe(
+  get(id): Observable<Bieb>{
+    return this.http.get<Bieb>('http://localhost:8080/bieb/' + id).pipe(
       catchError(this.handleError<Bieb>(`getBieb`))
     );
-  }
+}
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
