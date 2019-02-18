@@ -1,6 +1,10 @@
-<p>
-  bieb works!
-</p>
+<div *ngIf="bieb">
 
-<a routerLink="/overzicht">overzicht</a>
+  <h2>{{bieb.biebNaam}}</h2>
+  <div><span>id: </span>{{bieb.id}}</div>
+
+
+</div>
+
+<a routerLink="/biebOverzicht">overzicht</a>
 <a routerLink="/menu">menu</a>

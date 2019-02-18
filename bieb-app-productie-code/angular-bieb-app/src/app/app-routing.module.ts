@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full'},
   { path: 'voegBoekToe', component: VoegBoekToeFormComponent},
   { path: 'boekOverzicht', component: BoekOverzichtComponent},
-  { path: 'bieb', component: BiebComponent},
+  { path: 'bieb/:id', component: BiebComponent},
   { path: 'biebOverzicht', component: BiebOverzichtComponent},
   { path: 'voegBiebToe', component: VoegBiebToeFormComponent},
   { path: 'menu', component: MenuComponent}

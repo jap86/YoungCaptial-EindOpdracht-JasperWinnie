@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface VoegBoekToeFormService extends CrudRepository <Boek, Integer> {
+public interface BoekService extends CrudRepository <Boek, Integer> {
 }
