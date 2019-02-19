@@ -18,8 +18,7 @@ public class BiebController {
 
     @ResponseBody
     @RequestMapping(value = "/bieb", method = RequestMethod.POST)
-    public int create(@RequestBody Bieb bieb) {
-        return biebService.save(bieb).getId();
+    public int create(@RequestBody Bieb bieb) { return biebService.save(bieb).getId();
     }
 
     @ResponseBody

@@ -16,6 +16,18 @@ import java.util.Optional;
 public class BiebController {
     @Autowired private BiebService biebService;
 
+
+    @RequestMapping(value = "/bieb/boek/{îd}", method = RequestMethod.POST)
+    public boolean create(@PathVariable  int id, @RequestBody Boek boek) {
+        Optional<Bieb> bieb = biebService.findById(id);
+        if (bieb.isPresent()) {
+            bieb.get().voegBoekToe(boek);
+            biebService.save(bieb.get());
+            return true;
+        } else
+            return false;
+    }
+
     @ResponseBody
     @RequestMapping(value = "/bieb", method = RequestMethod.POST)
     public int create(@RequestBody Bieb bieb) {
