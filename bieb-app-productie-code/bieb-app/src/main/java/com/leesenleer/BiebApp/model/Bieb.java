@@ -18,11 +18,11 @@ public class Bieb {
     @OneToMany
     private List<Boek> boeken;
 
-    void voegBoekToe(Boek boek){
+    public void voegBoekToe(Boek boek){
         boeken.add(boek);
     }
 
-    void verwijderBoek(Boek boek){
+    public void verwijderBoek(Boek boek){
         boeken.remove(boek);
     }
 
