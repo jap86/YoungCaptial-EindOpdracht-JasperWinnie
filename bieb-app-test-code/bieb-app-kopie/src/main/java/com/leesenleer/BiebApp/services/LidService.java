@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LidService extends CrudRepository<Lid, Integer> {
+public interface LidService extends CrudRepository<Lid, Long> {
 }

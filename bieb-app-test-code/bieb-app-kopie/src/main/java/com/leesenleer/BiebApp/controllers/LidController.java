@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
-
 @Controller
 public class
 LidController {
@@ -19,19 +18,19 @@ LidController {
 
     @ResponseBody
     @RequestMapping(value = "/lid", method = RequestMethod.POST)
-    public int create(@RequestBody Lid lid) {
+    public long create(@RequestBody Lid lid) {
         return lidService.save(lid).getId();
     }
 
     @ResponseBody
     @RequestMapping(value = "/lid/{id}", method = RequestMethod.PUT)
-    public int updateLid(@PathVariable  int id, @RequestBody Lid lid) {
+    public long updateLid(@PathVariable  long id, @RequestBody Lid lid) {
         return lidService.save(lid).getId();
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @RequestMapping(value = "/lid/{id}", method = RequestMethod.DELETE)
-    public void updateLid(@PathVariable int id) {
+    public void updateLid(@PathVariable long id) {
         lidService.deleteById(id);
     }
 
@@ -43,7 +42,7 @@ LidController {
 
     @ResponseBody
     @RequestMapping(value = "/lid/{id}", method = RequestMethod.GET)
-    public Optional<Lid> getLid(@PathVariable int id){
+    public Optional<Lid> getLid(@PathVariable long id){
         return lidService.findById(id);
     }
 }

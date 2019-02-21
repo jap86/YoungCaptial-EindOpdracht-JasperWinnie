@@ -7,23 +7,38 @@ import java.util.List;
 public class Boek {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     private String titel;
     private String auteur;
     private int jaarVanUitgave;
     private int aantalBladzijden;
 
-    public int getId() {
-        return id;
+    @ManyToOne
+    private Bieb bieb;
+
+
+    public Boek() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Boek(String titel, String auteur, int jaarVanUitgave, int aantalBladzijden, Bieb bieb) {
+        this.titel = titel;
+        this.auteur = auteur;
+        this.jaarVanUitgave = jaarVanUitgave;
+        this.aantalBladzijden = aantalBladzijden;
+        this.bieb = bieb;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getTitel() {
         return titel;
     }
+
+    public void setBieb (Bieb bieb){this.bieb = bieb;}
+
+    public Bieb getBieb () {return this.bieb;}
 
     public void setTitel(String titel) {
         this.titel = titel;

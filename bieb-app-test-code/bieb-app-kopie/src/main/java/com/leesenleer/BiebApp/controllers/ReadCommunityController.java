@@ -11,26 +11,25 @@ import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
-
 @Controller
 public class ReadCommunityController {
     @Autowired private ReadCommunityService readCommunityService;
 
     @ResponseBody
     @RequestMapping(value = "/read-community-service", method = RequestMethod.POST)
-    public int create(@RequestBody ReadCommunity readCommunity) {
+    public long create(@RequestBody ReadCommunity readCommunity) {
         return readCommunityService.save(readCommunity).getId();
     }
 
     @ResponseBody
     @RequestMapping(value = "/read-community-service/{id}", method = RequestMethod.PUT)
-    public int updateLid(@PathVariable  int id, @RequestBody ReadCommunity readCommunity) {
+    public long updateLid(@PathVariable  long id, @RequestBody ReadCommunity readCommunity) {
         return readCommunityService.save(readCommunity).getId();
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @RequestMapping(value = "/read-community-service/{id}", method = RequestMethod.DELETE)
-    public void updateReadCommunity(@PathVariable int id) {
+    public void updateReadCommunity(@PathVariable long id) {
         readCommunityService.deleteById(id);
     }
 
@@ -42,7 +41,7 @@ public class ReadCommunityController {
 
     @ResponseBody
     @RequestMapping(value = "/read-community-service/{id}", method = RequestMethod.GET)
-    public Optional<ReadCommunity> getReadCommunity(@PathVariable int id){
+    public Optional<ReadCommunity> getReadCommunity(@PathVariable long id){
         return readCommunityService.findById(id);
     }
 }

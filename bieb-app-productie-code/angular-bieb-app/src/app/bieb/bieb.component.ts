@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class BiebComponent implements OnInit {
   bieb: Bieb;
+  id: number;
 
   constructor(
     private biebService: BiebService,
@@ -17,9 +18,9 @@ export class BiebComponent implements OnInit {
   }
 
    ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.biebService.get(id).subscribe(bieb => {
-      this.getBieb(id)
+    this.id = +this.route.snapshot.paramMap.get('id');
+    this.biebService.get(this.id).subscribe(bieb => {
+      this.getBieb(this.id)
     })
       }
 

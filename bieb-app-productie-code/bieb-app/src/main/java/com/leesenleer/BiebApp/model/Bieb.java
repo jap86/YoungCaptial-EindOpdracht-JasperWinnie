@@ -1,6 +1,9 @@
 package com.leesenleer.BiebApp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -8,30 +11,41 @@ public class Bieb {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private int id;
+    private long id;
     private String biebNaam;
     private String straat;
     private int nummer;
     private String plaats;
     private String beheerder;
+    private long biebId;
 
-    @OneToMany
-    private List<Boek> boeken;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getBiebId() {
+        return biebId;
+    }
+
+    public void setBiebId(long biebId) {
+        this.biebId = biebId;
+    }
+
+    @OneToMany (mappedBy = "bieb", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("bieb")
+    private List<Boek> boeken = new ArrayList<>();
 
     public void voegBoekToe(Boek boek){
         boeken.add(boek);
+        boek.setBieb(this);
     }
 
     public void verwijderBoek(Boek boek){
         boeken.remove(boek);
     }
 
-    public int getId() {
+    public long getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getBiebNaam() {

@@ -1,10 +1,13 @@
 <div *ngIf="bieb">
 
   <h2>{{bieb.biebNaam}}</h2>
-  <div><span>id: </span>{{bieb.id}}</div>
-
 
 </div>
 
-<a routerLink="/biebOverzicht">overzicht</a>
-<a routerLink="/menu">menu</a>
+<a routerLink="/bieb-overzicht">bieb overzicht</a><br>
+<a routerLink="/menu">menu</a><br>
+
+<a routerLink="/boek-overzicht/{{id}}">overzicht van de boeken</a><br>
+<a routerLink="/voeg-boek-toe/{{id}}">voeg boek toe</a><br>
+
+

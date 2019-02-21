@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Boek} from "../Boek";
 import {BoekOverzichtService} from "../boek-overzicht.service";
+import { Location} from "@angular/common";
+import {Bieb} from "../Bieb";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-boek-overzicht',
@@ -8,17 +11,24 @@ import {BoekOverzichtService} from "../boek-overzicht.service";
   styleUrls: ['./boek-overzicht.component.css']
 })
 export class BoekOverzichtComponent implements OnInit {
+  bieb: Bieb;
   boekOverzicht: Boek[];
+  id;
 
-  constructor(private boekOverzichtService: BoekOverzichtService) {
+  constructor(private boekOverzichtService: BoekOverzichtService, private location: Location, private route : ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.id = +this.route.snapshot.paramMap.get('id');
     this.getAllBooks();
   }
 
+  gaTerug(): void {
+    this.location.back();
+  }
+
   getAllBooks() {
-    this.boekOverzichtService.findAll().subscribe(
+    this.boekOverzichtService.findAll(this.id).subscribe(
       boekOverzicht => {
         this.boekOverzicht = boekOverzicht;
       },
@@ -32,4 +42,5 @@ export class BoekOverzichtComponent implements OnInit {
       () => this.getAllBooks()
     );
   }
+
 }
