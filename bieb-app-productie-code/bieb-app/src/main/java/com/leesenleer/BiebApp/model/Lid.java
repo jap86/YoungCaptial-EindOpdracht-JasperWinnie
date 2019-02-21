@@ -10,11 +10,11 @@ public class Lid {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    long id;
     String gebruikersnaam;
     String wachtwoord;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

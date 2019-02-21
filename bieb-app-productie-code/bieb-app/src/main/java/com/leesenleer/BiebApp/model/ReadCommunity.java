@@ -8,7 +8,7 @@ public class ReadCommunity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private int id=0;
+    private long id=0;
 
     @OneToMany
     private List<Lid> leden;
@@ -56,11 +56,11 @@ public class ReadCommunity {
         this.biebs = biebs;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

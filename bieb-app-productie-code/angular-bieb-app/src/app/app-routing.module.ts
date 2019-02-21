@@ -9,11 +9,11 @@ import {BoekOverzichtComponent} from "./boek-overzicht/boek-overzicht.component"
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full'},
-  { path: 'voegBoekToe', component: VoegBoekToeFormComponent},
-  { path: 'boekOverzicht', component: BoekOverzichtComponent},
+  { path: 'voeg-boek-toe/:id', component: VoegBoekToeFormComponent},
+  { path: 'boek-overzicht/:id', component: BoekOverzichtComponent},
   { path: 'bieb/:id', component: BiebComponent},
-  { path: 'biebOverzicht', component: BiebOverzichtComponent},
-  { path: 'voegBiebToe', component: VoegBiebToeFormComponent},
+  { path: 'bieb-overzicht', component: BiebOverzichtComponent},
+  { path: 'voeg-bieb-toe', component: VoegBiebToeFormComponent},
   { path: 'menu', component: MenuComponent}
 ];
 
