@@ -12,48 +12,10 @@ import java.util.List;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
-<<<<<<< HEAD
-@Controller
-=======
-
 @RestController
-
->>>>>>> master
-public class
-LidController {
+public class LidController {
     @Autowired private LidService lidService;
 
-<<<<<<< HEAD
-    @ResponseBody
-    @RequestMapping(value = "/lid", method = RequestMethod.POST)
-    public long create(@RequestBody Lid lid) {
-        return lidService.save(lid).getId();
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/lid/{id}", method = RequestMethod.PUT)
-    public long updateLid(@PathVariable  long id, @RequestBody Lid lid) {
-        return lidService.save(lid).getId();
-    }
-
-    @ResponseStatus(value = HttpStatus.OK)
-    @RequestMapping(value = "/lid/{id}", method = RequestMethod.DELETE)
-    public void updateLid(@PathVariable long id) {
-        lidService.deleteById(id);
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/lid", method = RequestMethod.GET)
-    public List<Lid> findAll() {
-        return (List<Lid>) lidService.findAll();
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/lid/{id}", method = RequestMethod.GET)
-    public Optional<Lid> getLid(@PathVariable long id){
-        return lidService.findById(id);
-    }
-=======
    @ResponseBody
    @PostMapping (value = "/lid")
     Lid voegLidToe (@RequestBody Lid lid){
@@ -92,7 +54,4 @@ LidController {
     void verwijderLid (@PathVariable ("id") long id){
        lidService.deleteById(id);
    }
-
-
->>>>>>> master
 }
