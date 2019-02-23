@@ -20,81 +20,22 @@ public class BiebController {
     @Autowired private BoekService boekService;
 
 
-    @RequestMapping(value = "/bieb/boek/{îd}", method = RequestMethod.POST)
-    public boolean create(@PathVariable  long id, @RequestBody Boek boek) {
-        Optional<Bieb> bieb = biebService.findById(id);
-        if (bieb.isPresent()) {
-            bieb.get().voegBoekToe(boek);
-            biebService.save(bieb.get());
-            return true;
-        } else
-            return false;
-    }
-
     @ResponseBody
     @RequestMapping(value = "/bieb", method = RequestMethod.POST)
-<<<<<<< HEAD
-    public long create(@RequestBody Bieb bieb) {
-        return biebService.save(bieb).getId();
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/bieb/{id}", method = RequestMethod.PUT)
-    public long updateLid(@PathVariable  long id, @RequestBody Bieb bieb) {
-=======
     public long maakBieb(@RequestBody Bieb bieb) {
->>>>>>> master
         return biebService.save(bieb).getId();
     }
-
 
     @ResponseStatus(value = HttpStatus.OK)
     @RequestMapping(value = "/bieb/{id}", method = RequestMethod.DELETE)
-<<<<<<< HEAD
-    public void updateLid(@PathVariable long id) {
-=======
     public void deleteBieb(@PathVariable long id) {
->>>>>>> master
         biebService.deleteById(id);
     }
-
-
-    @ResponseStatus(value = HttpStatus.OK)
-    @RequestMapping(value="/bieb/{biebId}/boek/{boekId}", method=RequestMethod.PUT)
-    public Bieb addBookToBieb(@PathVariable("biebId") long biebId, @PathVariable("boekId") long boekId) {
-
-        Bieb bieb = this.biebService.findById(biebId).get(); // dit moet zo later niet. je moet testen of er 1 in zit
-        Boek book = this.boekService.findById(boekId).get();
-
-        bieb.voegBoekToe(book);
-
-        this.biebService.save(bieb);
-        this.boekService.save(book);
-
-        return bieb;
-    }
-
-
-    @ResponseBody
-    @RequestMapping(value ="bieb/{biebId}", method=RequestMethod.POST)
-     public Bieb voegBoekToe (@PathVariable ("biebId") long biebId){
-        Bieb bieb = this.biebService.findById(biebId).get();
-
-        return bieb;
-    }
-
 
     @ResponseBody
     @RequestMapping(value = "/bieb", method = RequestMethod.GET)
     public List<Bieb> findAll() {
         return (List<Bieb>) biebService.findAll();
-    }
-
-
-    @ResponseBody
-    @RequestMapping(value = "/bieb/{id}", method = RequestMethod.GET)
-    public Optional<Bieb> getBieb(@PathVariable long id){
-        return biebService.findById(id);
     }
 
     @ResponseBody

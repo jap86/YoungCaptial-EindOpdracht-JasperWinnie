@@ -4,10 +4,6 @@ import {VoegBoekToeFormService} from "../voeg-boek-toe-form.service";
 import {Boek} from "../Boek";
 import {BoekOverzichtComponent} from "../boek-overzicht/boek-overzicht.component";
 import { Location} from "@angular/common";
-<<<<<<< HEAD
-import {BiebService} from "../bieb.service";
-=======
->>>>>>> master
 import {Bieb} from "../Bieb";
 import {ActivatedRoute} from "@angular/router";
 

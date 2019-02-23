@@ -8,8 +8,5 @@ import java.util.List;
 
 @Repository
 public interface LidService extends CrudRepository<Lid, Long> {
-<<<<<<< HEAD
-=======
 //    Iterable<Lid>findByGebruikersnaam();
->>>>>>> master
 }

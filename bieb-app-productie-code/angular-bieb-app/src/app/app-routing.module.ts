@@ -15,12 +15,8 @@ const routes: Routes = [
   { path: 'bieb/:id', component: BiebComponent},
   { path: 'bieb-overzicht', component: BiebOverzichtComponent},
   { path: 'voeg-bieb-toe', component: VoegBiebToeFormComponent},
-<<<<<<< HEAD
-  { path: 'menu', component: MenuComponent}
-=======
   { path: 'menu', component: MenuComponent},
   { path: 'login', component: LoginComponent}
->>>>>>> master
 ];
 
 @NgModule({
