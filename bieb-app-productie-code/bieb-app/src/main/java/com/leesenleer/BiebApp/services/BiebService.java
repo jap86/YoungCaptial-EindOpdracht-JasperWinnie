@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
 import java.util.List;
 
 @Repository
@@ -15,4 +16,9 @@ public interface BiebService extends CrudRepository<Bieb, Long> {
 //  @Query(value = "SELECT *  FROM boek bo WHERE bo.id = :biebid ", nativeQuery = true)
 //  List<Boek> findBoekByBiebID(@Param("biebid") long biebid);
 
+=======
+
+@Repository
+public interface BiebService extends CrudRepository<Bieb, Long> {
+>>>>>>> master
   }

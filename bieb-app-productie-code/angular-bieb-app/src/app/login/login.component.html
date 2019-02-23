@@ -1,0 +1,7 @@
+<form [formGroup]="loginForm" (ngSubmit)="voegLidToe($event)">
+  <input formControlName="gebruikersnaam" type="text" placeholder="gebruikersnaam"><br>
+  <input formControlName="wachtwoord" type="text" placeholder="wachtwoord">
+   <button type="submit">Voeg Toe!</button>
+</form>
+
+<a routerLink="/menu">menu</a><br>

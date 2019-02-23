@@ -5,7 +5,6 @@ import com.leesenleer.BiebApp.services.BoekService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import com.leesenleer.BiebApp.model.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +33,7 @@ public class BiebController {
 
     @ResponseBody
     @RequestMapping(value = "/bieb", method = RequestMethod.POST)
+<<<<<<< HEAD
     public long create(@RequestBody Bieb bieb) {
         return biebService.save(bieb).getId();
     }
@@ -41,13 +41,20 @@ public class BiebController {
     @ResponseBody
     @RequestMapping(value = "/bieb/{id}", method = RequestMethod.PUT)
     public long updateLid(@PathVariable  long id, @RequestBody Bieb bieb) {
+=======
+    public long maakBieb(@RequestBody Bieb bieb) {
+>>>>>>> master
         return biebService.save(bieb).getId();
     }
 
 
     @ResponseStatus(value = HttpStatus.OK)
     @RequestMapping(value = "/bieb/{id}", method = RequestMethod.DELETE)
+<<<<<<< HEAD
     public void updateLid(@PathVariable long id) {
+=======
+    public void deleteBieb(@PathVariable long id) {
+>>>>>>> master
         biebService.deleteById(id);
     }
 
