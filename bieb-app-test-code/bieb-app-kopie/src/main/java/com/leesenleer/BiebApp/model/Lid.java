@@ -10,12 +10,16 @@ public class Lid {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
-    String gebruikersnaam;
-    String wachtwoord;
+    long id;
+    private String gebruikersnaam;
+    private String wachtwoord;
 
-    public int getId() {
+    public long getId() {
         return id;
+    }
+
+    public boolean checkWachtwoord(String gebruikersnaam, String wachtwoord){
+        return ((this.gebruikersnaam.equals(gebruikersnaam))&&(this.wachtwoord.equals(wachtwoord)) );
     }
 
     public String getGebruikersnaam() {

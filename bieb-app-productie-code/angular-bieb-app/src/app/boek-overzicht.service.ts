@@ -18,8 +18,8 @@ export class BoekOverzichtService {
     };
   }
 
-  findAll(): Observable<Boek []> {
-    return this.http.get<any>('http://localhost:8080/boek').pipe(
+  findAll(id: number): Observable<Boek []> {
+    return this.http.get<any>(`http://localhost:8080/bieb/boeken/${id}`).pipe(
       catchError(this.handleError<Boek>(`boek`))
     );
   }
@@ -29,4 +29,11 @@ export class BoekOverzichtService {
       catchError(this.handleError<Boek>(`delete`))
     );
   }
+  //   @ResponseBody
+//   @RequestMapping(value = "/bieb/boeken/{id}", method = RequestMethod.GET)
+//   public List<Boek> getBiebBoeken(@PathVariable("id") long id){
+//   Bieb bieb = biebService.findById(id).get();
+//   List<Boek> boekenList= bieb.getBoeken();
+//   return boekenList;
+// }
 }

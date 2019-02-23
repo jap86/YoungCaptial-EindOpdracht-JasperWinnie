@@ -10,6 +10,8 @@ import { MenuComponent } from './menu/menu.component';
 import { BiebComponent } from './bieb/bieb.component';
 import { VoegBoekToeFormComponent } from './voeg-boek-toe-form/voeg-boek-toe-form.component';
 import { BoekOverzichtComponent } from './boek-overzicht/boek-overzicht.component';
+import { LoginComponent } from './login/login.component';
+import { LidComponent } from './lid/lid.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BoekOverzichtComponent } from './boek-overzicht/boek-overzicht.componen
     MenuComponent,
     BiebComponent,
     VoegBoekToeFormComponent,
-    BoekOverzichtComponent
+    BoekOverzichtComponent,
+    LoginComponent,
+    LidComponent
   ],
   imports: [
     BrowserModule,

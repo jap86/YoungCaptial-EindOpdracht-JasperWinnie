@@ -13,7 +13,7 @@ import {BiebOverzichtComponent} from "../bieb-overzicht/bieb-overzicht.component
 export class VoegBiebToeFormComponent implements OnInit {
 
   @Input()
-  biebOverzicht: BiebOverzichtComponent
+  biebOverzicht: BiebOverzichtComponent;
 
   constructor(public fb: FormBuilder, private voegBiebToeFormService: VoegBiebToeFormService) { }
 
@@ -28,8 +28,7 @@ export class VoegBiebToeFormComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  public saveBieb(event) {
+   public saveBieb(event) {
 
     const biebNaam = this.voegBiebToeForm.controls['biebNaam'].value;
     const straat = this.voegBiebToeForm.controls['straat'].value;

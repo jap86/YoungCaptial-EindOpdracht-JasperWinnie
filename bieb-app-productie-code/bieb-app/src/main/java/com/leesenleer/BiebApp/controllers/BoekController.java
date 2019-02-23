@@ -1,48 +1,36 @@
 package com.leesenleer.BiebApp.controllers;
 
+import com.leesenleer.BiebApp.services.BiebService;
 import com.leesenleer.BiebApp.services.BoekService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import com.leesenleer.BiebApp.model.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
-
-@Controller
+@RestController
 public class BoekController {
     @Autowired private BoekService boekService;
+    @Autowired private BiebService biebService;
 
     @ResponseBody
-    @RequestMapping(value = "/boek", method = RequestMethod.POST)
-    public int create(@RequestBody Boek boek) {
-        return boekService.save(boek).getId();
+    @RequestMapping(value = "bieb/{biebId}/boek", method = RequestMethod.POST)
+    public Boek create(@RequestBody Boek boek, @PathVariable("biebId")long biebId) {
+        Bieb bieb = this.biebService.findById(biebId).get();
+        bieb.voegBoekToe(boek);
+        return boekService.save(boek);
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/boek/{id}", method = RequestMethod.PUT)
-    public int updateBoek(@PathVariable  int id, @RequestBody Boek boek) {
-        return boekService.save(boek).getId();
+    @GetMapping("/boek/{biebId}")
+    public List<Boek> getBoekByBiebID(@PathVariable("biebId")long biebId) {
+
+        return boekService.findByBiebId(biebId);
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @RequestMapping(value = "/boek/{id}", method = RequestMethod.DELETE)
-    public void updateBoek(@PathVariable int id) {
+    public void updateBoek(@PathVariable long id) {
         boekService.deleteById(id);
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/boek", method = RequestMethod.GET)
-    public List<Boek> findAll() {
-        return (List<Boek>) boekService.findAll();
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/boek/{id}", method = RequestMethod.GET)
-    public Optional<Boek> getBoek(@PathVariable int id){
-        return boekService.findById(id);
     }
 }

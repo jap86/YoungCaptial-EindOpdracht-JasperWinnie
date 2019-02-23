@@ -4,6 +4,9 @@ import com.leesenleer.BiebApp.model.Lid;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public interface LidService extends CrudRepository<Lid, Integer> {
+public interface LidService extends CrudRepository<Lid, Long> {
+//    Iterable<Lid>findByGebruikersnaam();
 }

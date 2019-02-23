@@ -1,3 +1,5 @@
+<h2>Boekoverzicht</h2>
+
 <table>
   <tr *ngFor="let Boek of boekOverzicht">
     <td>{{Boek.titel}}</td>
@@ -8,4 +10,8 @@
    </tr>
 </table>
 
-<a routerLink="/menu">Menu</a>
+<button (click)="gaTerug()">ga terug</button>
+
+
+
+
