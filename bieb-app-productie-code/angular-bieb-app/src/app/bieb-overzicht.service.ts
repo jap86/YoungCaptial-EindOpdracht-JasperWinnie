@@ -18,6 +18,8 @@ export class BiebOverzichtService {
     };
   }
 
+
+
   findAll(): Observable<Bieb []> {
     return this.http.get<any>('http://localhost:8080/bieb').pipe(
       catchError(this.handleError<Bieb>(`bieb`))

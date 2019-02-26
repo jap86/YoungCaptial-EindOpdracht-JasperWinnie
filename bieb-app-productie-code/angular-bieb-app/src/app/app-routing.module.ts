@@ -7,6 +7,7 @@ import {BiebComponent} from "./bieb/bieb.component";
 import {VoegBoekToeFormComponent} from "./voeg-boek-toe-form/voeg-boek-toe-form.component";
 import {BoekOverzichtComponent} from "./boek-overzicht/boek-overzicht.component";
 import {LoginComponent} from "./login/login.component";
+import {MapComponent} from "./map/map.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'bieb-overzicht', component: BiebOverzichtComponent},
   { path: 'voeg-bieb-toe', component: VoegBiebToeFormComponent},
   { path: 'menu', component: MenuComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'map', component: MapComponent}
 ];
 
 @NgModule({
