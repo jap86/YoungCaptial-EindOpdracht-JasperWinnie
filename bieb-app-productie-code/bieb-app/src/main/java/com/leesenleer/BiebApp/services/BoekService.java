@@ -2,11 +2,9 @@ package com.leesenleer.BiebApp.services;
 
 import com.leesenleer.BiebApp.model.Boek;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-@Repository
-public interface BoekService extends CrudRepository <Boek, Long> {
-    List<Boek> findByBiebId(Long biedid);
+public interface BoekService extends CrudRepository<Boek, Long>{
+    Iterable<Boek> findBoeksByAuteurContains(String auteur);
+    Iterable<Boek> findBoeksByTitelContains(String titel);
+    Iterable<Boek> findBoeksByTitelContainsAndAuteurContains(String titel, String auteur);
 }

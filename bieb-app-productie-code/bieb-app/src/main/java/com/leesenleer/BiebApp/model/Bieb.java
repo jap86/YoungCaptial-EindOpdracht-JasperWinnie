@@ -17,31 +17,19 @@ public class Bieb {
     private int nummer;
     private String plaats;
     private String beheerder;
-    private long biebId;
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getBiebId() {
-        return biebId;
-    }
-
-    public void setBiebId(long biebId) {
-        this.biebId = biebId;
-    }
 
     @OneToMany (mappedBy = "bieb", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("bieb")
-    private List<Boek> boeken = new ArrayList<>();
+    private List<BoekExemplaar> boekExemplaren = new ArrayList<>();
 
-    public void voegBoekToe(Boek boek){
-        boeken.add(boek);
-        boek.setBieb(this);
+    public void voegBoekExemplaarToe(BoekExemplaar boekExemplaar){
+        this.boekExemplaren.add(boekExemplaar);
+        boekExemplaar.setBieb(this);
     }
 
-    public void verwijderBoek(Boek boek){
-        boeken.remove(boek);
+    public void verwijderBoek(BoekExemplaar boekExemplaar){
+        this.boekExemplaren.remove(boekExemplaar);
     }
 
     public long getId() {
@@ -88,12 +76,12 @@ public class Bieb {
         this.beheerder = beheerder;
     }
 
-    public List<Boek> getBoeken() {
-        return boeken;
+    public List<BoekExemplaar> getBoekExemplaren() {
+        return boekExemplaren;
     }
 
-    public void setBoeken(List<Boek> boeken) {
-        this.boeken = boeken;
+    public void setBoekExemplaren(List<BoekExemplaar> boekExemplaren) {
+        this.boekExemplaren = boekExemplaren;
     }
 
     @Override
@@ -105,7 +93,7 @@ public class Bieb {
                 ", nummer=" + nummer +
                 ", plaats='" + plaats + '\'' +
                 ", beheerder='" + beheerder + '\'' +
-                ", boeken=" + boeken +
+                ", boekExemplaren=" + boekExemplaren +
                 '}';
     }
 }

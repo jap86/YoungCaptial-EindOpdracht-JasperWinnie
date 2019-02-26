@@ -1,14 +1,20 @@
 package com.leesenleer.BiebApp.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class ReadCommunity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private long id=0;
+    private long id;
+
+    @OneToMany
+    private Set<Boek> boeken = new HashSet<>();
 
     @OneToMany
     private List<Lid> leden;
@@ -16,28 +22,20 @@ public class ReadCommunity {
     @OneToMany
     private List<Bieb> biebs;
 
-    void voegLidToe(Lid lid){
-        leden.add(lid);
+    public void voebBoekToe(Boek boek){
+        boeken.add(boek);
     }
 
-    void voegBiebToe(Bieb bieb){
-        biebs.add(bieb);
+    public long getId() {
+        return id;
     }
 
-    void verwijderLid(Lid lid){
-        leden.remove(lid);
+    public Set<Boek> getBoeken() {
+        return boeken;
     }
 
-    void verwijderBieb(Bieb bieb){
-        biebs.remove(bieb);
-    }
-
-    @Override
-    public String toString() {
-        return "ReadCommunity{" +
-                "leden=" + leden +
-                ", biebs=" + biebs +
-                '}';
+    public void setBoeken(Set<Boek> boeken) {
+        this.boeken = boeken;
     }
 
     public List<Lid> getLeden() {
@@ -56,12 +54,30 @@ public class ReadCommunity {
         this.biebs = biebs;
     }
 
-    public long getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "ReadCommunity{" +
+                "id=" + id +
+                ", boeken=" + boeken +
+                ", leden=" + leden +
+                ", biebs=" + biebs +
+                '}';
     }
 
-    public void setId(long id) {
-        this.id = id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReadCommunity that = (ReadCommunity) o;
+        return id == that.id &&
+                Objects.equals(boeken, that.boeken) &&
+                Objects.equals(leden, that.leden) &&
+                Objects.equals(biebs, that.biebs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, boeken, leden, biebs);
     }
 }
 

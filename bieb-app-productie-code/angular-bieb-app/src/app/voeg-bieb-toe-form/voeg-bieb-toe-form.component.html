@@ -1,11 +1,45 @@
 <form [formGroup]="voegBiebToeForm" (ngSubmit)="saveBieb($event)">
-  <input formControlName="biebNaam" type="text" placeholder="Naam Bieb"><br>
-  <input formControlName="straat" type="text" placeholder="Straat">
-  <input formControlName="nummer" type="text" placeholder="Nummer"><br>
-  <input formControlName="plaats" type="text" placeholder="Plaats"><br>
-  <input formControlName="beheerder" type="text" placeholder="Beheerder"><br>
-  <button type="submit">Voeg Toe!</button>
-</form>
 
-<a routerLink="/menu">menu</a><br>
+  <div class="form-row" >
+    <div class="form-group col-4">
+      <label>Naam Bieb</label>
+      <input formControlName="biebNaam" type="text" placeholder="Naam Bieb">
+    </div>
+  </div>
+
+ <div class="form-row">
+   <div class="form-group col-4">
+     <label>Straat</label>
+     <input formControlName="straat" type="text" placeholder="Straat">
+   </div>
+   <div class="form-group col-4">
+     <label>Nummer</label>
+     <input formControlName="nummer" type="number" placeholder="Nummer">
+   </div>
+ </div>
+
+  <div class="form-row">
+    <div class="form-group col-4">
+      <label>Plaats</label>
+      <input formControlName="plaats" type="text" placeholder="Plaats">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-4">
+      <p><label>PLAATS</label></p>
+      <input formControlName="plaats" type="text" placeholder="Plaats">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-4">
+      <label>Beheerder</label>
+      <input formControlName="beheerder" type="text" placeholder="Beheerder">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Voeg Toe</button>
+
+</form>
 

@@ -6,30 +6,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VoegBiebToeFormComponent } from './voeg-bieb-toe-form/voeg-bieb-toe-form.component';
 import { BiebOverzichtComponent } from './bieb-overzicht/bieb-overzicht.component';
-import { MenuComponent } from './menu/menu.component';
 import { BiebComponent } from './bieb/bieb.component';
 import { VoegBoekToeFormComponent } from './voeg-boek-toe-form/voeg-boek-toe-form.component';
 import { BoekOverzichtComponent } from './boek-overzicht/boek-overzicht.component';
 import { LoginComponent } from './login/login.component';
 import { LidComponent } from './lid/lid.component';
+import { MenuComponent } from './menu/menu.component';
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     VoegBiebToeFormComponent,
     BiebOverzichtComponent,
-    MenuComponent,
     BiebComponent,
     VoegBoekToeFormComponent,
     BoekOverzichtComponent,
     LoginComponent,
-    LidComponent
-  ],
+    LidComponent,
+    MenuComponent,
+    MapComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyA-JEG1g2sA_1GRs5Hot9gE5fcN9e-OIgE'})
+
   ],
   providers: [],
   bootstrap: [AppComponent]

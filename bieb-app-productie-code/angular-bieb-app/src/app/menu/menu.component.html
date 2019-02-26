@@ -1,5 +1,16 @@
-<h3>Menu</h3>
-<a routerLink="/bieb-overzicht">overzicht van de biebs</a><br>
-<a routerLink="/voeg-bieb-toe">voeg bieb toe</a><br>
-<a routerLink="/login">login</a>
+<nav class="menu navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
 
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/menu">Menu <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" routerLink="/bieb-overzicht">Ga naar de Biebs </a>
+      <a class="nav-item nav-link active" routerLink="/voeg-bieb-toe">Voeg een Bieb toe </a>
+
+    </div>
+  </div>
+</nav>
