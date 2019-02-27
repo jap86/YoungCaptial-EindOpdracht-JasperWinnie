@@ -25,14 +25,7 @@ public class BoekExemplaarController {
     public BoekExemplaar create(@RequestBody BoekExemplaar boekExemplaar, @PathVariable("biebId")long biebId) {
         Bieb bieb = this.biebService.findById(biebId).get();
         bieb.voegBoekExemplaarToe(boekExemplaar);
-        Boek boek = new Boek(boekExemplaar, bieb);
-        this.boekService.save(boek);
         return boekExemplaarService.save(boekExemplaar);
-    }
-
-    @GetMapping("/boeken")
-    public List<BoekExemplaar>getBoeken(){
-        return (List<BoekExemplaar>)this.boekExemplaarService.findAll();
     }
 
     @GetMapping("/boek/{biebId}")
@@ -45,5 +38,27 @@ public class BoekExemplaarController {
     @RequestMapping(value = "/boek/{id}", method = RequestMethod.DELETE)
     public void updateBoek(@PathVariable long id) {
         boekExemplaarService.deleteById(id);
+    }
+
+    @GetMapping(value = "/titel/{titel}")
+    public List<BoekExemplaar>vindBoekOpTitel(@PathVariable("titel")String titel){
+        return this.boekExemplaarService.findBoeksByTitelContainsOrderByTitel(titel);
+    }
+
+    @GetMapping(value = "/auteur/{auteur}")
+    public List<BoekExemplaar> vindBoekOpAuteur(@PathVariable("auteur")String auteur){
+        return this.boekExemplaarService.findBoeksByAuteurContainsOrderByAuteur(auteur);
+    }
+
+    @GetMapping(value = "titelauteur/{titel}/{auteur}")
+    public List<BoekExemplaar> vindBoekOpAuteurEnOfTitel(@PathVariable("auteur")String auteur,
+                                                         @PathVariable("titel")String titel){
+        return this.boekExemplaarService.findByTitelOrAuteurOrderByAuteur(titel, auteur);
+    }
+
+
+    @GetMapping(value = "/boeken")
+    public List<BoekExemplaar> vindAlleBoeken(){
+        return (List<BoekExemplaar>) this.boekExemplaarService.findAll();
     }
 }

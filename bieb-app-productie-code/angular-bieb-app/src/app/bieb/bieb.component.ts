@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Bieb} from "../Bieb";
 import {BiebService} from "../bieb.service";
 import {ActivatedRoute} from "@angular/router";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-bieb',
@@ -14,7 +15,12 @@ export class BiebComponent implements OnInit {
 
   constructor(
     private biebService: BiebService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private location: Location) {
+  }
+
+  gaTerug(): void {
+    this.location.back();
   }
 
    ngOnInit() {

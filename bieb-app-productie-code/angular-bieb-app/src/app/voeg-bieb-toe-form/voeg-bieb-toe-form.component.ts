@@ -3,6 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {VoegBiebToeFormService} from "../voeg-bieb-toe-form.service";
 import {Bieb} from "../Bieb";
 import {BiebOverzichtComponent} from "../bieb-overzicht/bieb-overzicht.component";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-voeg-bieb-toe-form',
@@ -15,7 +16,7 @@ export class VoegBiebToeFormComponent implements OnInit {
   @Input()
   biebOverzicht: BiebOverzichtComponent;
 
-  constructor(public fb: FormBuilder, private voegBiebToeFormService: VoegBiebToeFormService) { }
+  constructor(public fb: FormBuilder, private voegBiebToeFormService: VoegBiebToeFormService, private location: Location) { }
 
   public voegBiebToeForm = this.fb.group({
     biebNaam: ['', Validators.required],
@@ -26,6 +27,11 @@ export class VoegBiebToeFormComponent implements OnInit {
   });
 
   ngOnInit() {
+  }
+
+
+  gaTerug(): void {
+    this.location.back();
   }
 
    public saveBieb(event) {

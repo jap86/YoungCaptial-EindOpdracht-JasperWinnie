@@ -23,6 +23,9 @@ public class Bieb {
     @JsonIgnoreProperties("bieb")
     private List<BoekExemplaar> boekExemplaren = new ArrayList<>();
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Boek> boeken;
+
     public void voegBoekExemplaarToe(BoekExemplaar boekExemplaar){
         this.boekExemplaren.add(boekExemplaar);
         boekExemplaar.setBieb(this);
