@@ -1,3 +1,16 @@
+.Hevar{
+  margin-top: 10px;
+  border: 1px solid midnightblue;
+  box-shadow: 0 0 10px gray;
+  background-color: rgba(240, 130, 0, 0.3);
+  border-collapse: collapse;
+}
 .form-row {
   font-size: 20px;
+}
+.biebinput {
+  float: right;
+}
+.btn.btn-primary {
+  margin-top: 20px;
 }

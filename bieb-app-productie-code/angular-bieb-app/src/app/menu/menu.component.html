@@ -10,7 +10,28 @@
       <a class="nav-item nav-link active" routerLink="/menu">Menu <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" routerLink="/bieb-overzicht">Ga naar de Biebs </a>
       <a class="nav-item nav-link active" routerLink="/voeg-bieb-toe">Voeg een Bieb toe </a>
+      <form>
+        <input type="text" #boekTitel>
+        <button (click)="zoekBoekOpTitel(boekTitel.value)">Boek Zoek Boek</button>
+      </form>
 
     </div>
   </div>
 </nav>
+<div CLASS="Hevar">
+<table class="tabel" *ngIf="boekOverzicht">
+  <tr *ngFor="let Boek of boekOverzicht">
+    <td>{{Boek.titel}}</td>
+    <td>{{Boek.auteur}}</td>
+    <td>{{Boek.bieb.biebNaam}}</td>
+  </tr>
+</table>
+</div>
+<!--<div style="text-align: center">-->
+  <!--<div class="jumbotron">-->
+  <!--<h1 class="display-4">Welkom bij de {{title}}</h1>-->
+  <!--<p class="lead">Verbonden door boeken</p>-->
+  <!--<hr class="my-4">-->
+  <!--<img src="https://backgroundcheckall.com/wp-content/uploads/2018/10/book-background-tumblr-2.jpg">-->
+  <!--</div>-->
+<!--</div>-->

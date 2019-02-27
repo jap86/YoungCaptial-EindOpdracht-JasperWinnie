@@ -16,8 +16,8 @@ public class Boek {
     private String titel;
     private String auteur;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("boekExemplaren")
+    @ManyToMany(mappedBy="boeken", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("boekExemplaren, boeken")
     private List<Bieb>biebs = new ArrayList<>();
 
     public Boek(BoekExemplaar boekExemplaar, Bieb bieb){
@@ -29,7 +29,6 @@ public class Boek {
     public Boek(){}
 
     public void voegBiebToe(Bieb bieb){
-
         this.biebs.add(bieb);
     }
 

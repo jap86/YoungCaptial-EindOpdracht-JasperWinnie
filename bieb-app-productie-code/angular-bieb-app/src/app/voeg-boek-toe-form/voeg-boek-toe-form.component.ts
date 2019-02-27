@@ -41,7 +41,6 @@ export class VoegBoekToeFormComponent implements OnInit {
   }
 
   public saveBoek(event) {
-
     const titel = this.voegBoekToeForm.controls['titel'].value;
     const auteur = this.voegBoekToeForm.controls['auteur'].value;
     const jaarVanUitgave = this.voegBoekToeForm.controls['jaarVanUitgave'].value;

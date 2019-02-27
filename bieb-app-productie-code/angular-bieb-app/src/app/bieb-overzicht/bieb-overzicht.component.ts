@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Bieb} from "../Bieb";
 import {BiebOverzichtService} from "../bieb-overzicht.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-bieb-overzicht',
@@ -10,11 +11,16 @@ import {BiebOverzichtService} from "../bieb-overzicht.service";
 export class BiebOverzichtComponent implements OnInit {
   biebOverzicht: Bieb[];
 
-  constructor(private biebOverzichtService: BiebOverzichtService) {
+  constructor(private biebOverzichtService: BiebOverzichtService, private location: Location) {
   }
 
   ngOnInit() {
     this.getAllBiebs();
+  }
+
+
+  gaTerug(): void {
+    this.location.back();
   }
 
   getAllBiebs() {

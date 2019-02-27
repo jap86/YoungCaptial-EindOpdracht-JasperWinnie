@@ -1,45 +1,47 @@
+<div class="Hevar">
 <form [formGroup]="voegBiebToeForm" (ngSubmit)="saveBieb($event)">
 
   <div class="form-row" >
     <div class="form-group col-4">
       <label>Naam Bieb</label>
-      <input formControlName="biebNaam" type="text" placeholder="Naam Bieb">
+      <input formControlName="biebNaam" type="text" placeholder="Naam Bieb" class="biebinput">
     </div>
   </div>
 
  <div class="form-row">
    <div class="form-group col-4">
      <label>Straat</label>
-     <input formControlName="straat" type="text" placeholder="Straat">
+     <input formControlName="straat" type="text" placeholder="Straat" class="biebinput">
    </div>
    <div class="form-group col-4">
      <label>Nummer</label>
-     <input formControlName="nummer" type="number" placeholder="Nummer">
+     <input formControlName="nummer" type="number" placeholder="Nummer" class="biebinput">
    </div>
  </div>
 
   <div class="form-row">
     <div class="form-group col-4">
       <label>Plaats</label>
-      <input formControlName="plaats" type="text" placeholder="Plaats">
+      <input formControlName="plaats" type="text" placeholder="Plaats" class="biebinput">
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-4">
-      <p><label>PLAATS</label></p>
-      <input formControlName="plaats" type="text" placeholder="Plaats">
-    </div>
-  </div>
+  <!--<div class="form-row">-->
+    <!--<div class="form-group col-4">-->
+      <!--<p><label>PLAATS</label></p>-->
+      <!--<input formControlName="plaats" type="text" placeholder="Plaats" class="biebinput">-->
+    <!--</div>-->
+  <!--</div>-->
 
   <div class="form-row">
     <div class="form-group col-4">
       <label>Beheerder</label>
-      <input formControlName="beheerder" type="text" placeholder="Beheerder">
+      <input formControlName="beheerder" type="text" placeholder="Beheerder" class="biebinput">
     </div>
   </div>
-
+</form>
+</div>
   <button type="submit" class="btn btn-primary">Voeg Toe</button>
 
-</form>
 
+<button (click)="gaTerug()">ga terug</button>

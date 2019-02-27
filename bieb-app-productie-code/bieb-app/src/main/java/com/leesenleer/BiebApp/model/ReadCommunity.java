@@ -14,7 +14,7 @@ public class ReadCommunity {
     private long id;
 
     @OneToMany
-    private Set<Boek> boeken = new HashSet<>();
+    private static Set<Boek> boeken = new HashSet<>();
 
     @OneToMany
     private List<Lid> leden;
@@ -22,7 +22,7 @@ public class ReadCommunity {
     @OneToMany
     private List<Bieb> biebs;
 
-    public void voebBoekToe(Boek boek){
+    public static void voegBoekToe(Boek boek){
         boeken.add(boek);
     }
 

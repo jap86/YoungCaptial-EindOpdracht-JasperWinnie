@@ -1,0 +1,29 @@
+.Hevar{
+  border: 1px solid lightgray;
+  box-shadow: 0 0 10px gray;
+  background-color: rgba(240, 130, 0, 0.3);
+  border-collapse: collapse;
+}
+.table1 {
+  font-family: Arial;
+  color: white;
+}
+.delete {
+  border: none;
+  background: #404040;
+  color: #ffffff;
+  font-weight: 100;
+  padding: 0px 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline;
+  float: right;
+}
+.delete:hover {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: none;
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
+}

@@ -23,6 +23,21 @@ export class BoekOverzichtService {
       catchError(this.handleError<Boek>(`boek`))
     );
   }
+  saveBoek(boek: Boek, id: number) {
+    return this.http.post(`http://localhost:8080/bieb/${id}/boek`, boek).pipe(
+      catchError(this.handleError<Boek>(`saveUser`))
+    );
+  }
+  vindBoekOpAuteur(auteur: string) {
+    return this.http.get(`http://localhost:8080/auteur/` +auteur).pipe(
+      catchError(this.handleError<Boek>(`boek`))
+    )
+  }
+  vindBoekOpTitel(titel: string){
+    return this.http.get<any>(`http://localhost:8080/titel/` +titel).pipe(
+      catchError(this.handleError<Boek[]>(`boek`))
+    )
+  }
 
   delete(id) {
     return this.http.delete('http://localhost:8080/boek/' + id).pipe(
