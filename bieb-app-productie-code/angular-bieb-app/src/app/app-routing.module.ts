@@ -9,15 +9,17 @@ import {BoekOverzichtComponent} from "./boek-overzicht/boek-overzicht.component"
 import {LoginComponent} from "./login/login.component";
 import {MapComponent} from "./map/map.component";
 import {ZoekResultaatComponent} from "./zoek-resultaat/zoek-resultaat.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/menu', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
   { path: 'voeg-boek-toe/:id', component: VoegBoekToeFormComponent},
   { path: 'boek-overzicht/:id', component: BoekOverzichtComponent},
   { path: 'bieb/:id', component: BiebComponent},
   { path: 'bieb-overzicht', component: BiebOverzichtComponent},
   { path: 'voeg-bieb-toe', component: VoegBiebToeFormComponent},
-  { path: 'menu', component: MenuComponent},
+  // { path: 'menu', component: MenuComponent},
   { path: 'login', component: LoginComponent},
   { path: 'map', component: MapComponent},
   { path: 'zoekresultaat/:titel', component: ZoekResultaatComponent}

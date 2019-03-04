@@ -1,18 +1,56 @@
-<body>
-<div *ngIf="bieb">
-  <div class="bg"></div>
+<!--<app-menu xmlns:color="http://www.w3.org/1999/xhtml"></app-menu>-->
 
-  <p class="py-5 text-center">
+<app-menu></app-menu>
+
+<div *ngIf="bieb">
 
   <h2>{{bieb.biebNaam}}</h2>
 
 </div>
 
-<a routerLink="/boek-overzicht/{{id}}">overzicht van de boeken</a><br>
-<a routerLink="/voeg-boek-toe/{{id}}">voeg boek toe</a><br>
 
-<img src="https://lh3.googleusercontent.com/vHEi8KcqjRbwcYpH3K2MW1kqct01q29Wrp5z8__WXN3Ncx1CSQraiRURFCQJuyFi1SA_4WhmC8LdxSCxfMuTd326X-a3m3FeBMTdBYvEJx4voWNmh0R0zPgnn6knRY_Twf1sO5mcQLytGBt6AgHkvl9IkVZDB_GcOcr7l2Af_WG0nDpvkT2SgHCz5a8RjabYA0gYFsh3jLaMy9uNhgucNuAglxZRWOoe0U7NE4XinbEAQpfise9V4bEzlNxBK08N_1VK-3iIbCOD7fRtm8K1h0Os1LKRTteF_FdZKdjtWGr28qO-hLGOpiIA_XtcuAb99xyb8LdPTMeZoOeBlpDh3seIkSVwKyUYcsJOTuWZtjjpn50uEMEaUPyhshQOOuKEeJooWvBP1NjjdEgG3aNC_VZH3TlQeocwh9an31-_10IqV_2L22CC5ILKLSUROwAoh8MU5McHuai642MoQ3TaWLUH8wuY_R1iEXmzOPVe7EyEu6S6Cb3t4OY3qvBHi75b3BW4HKeus1d3FCDc1RQLFucGXau_-7stKOiVUD0gaCwLMNOugUEWm0k3TWCq6vdMcOf6wRdM_XpAdGowUX_KEbYljKgyy1Ls1PNqYJ55cy-QcpEE4_DTkOn3Gl3huSO0ztPJOT8iW-6Z_-j2khG4MhPznd2vVhE=w510-h903-no">
 
-</body>
+<!--<img src="https://lh3.googleusercontent.com/vHEi8KcqjRbwcYpH3K2MW1kqct01q29Wrp5z8__WXN3Ncx1CSQraiRURFCQJuyFi1SA_4WhmC8LdxSCxfMuTd326X-a3m3FeBMTdBYvEJx4voWNmh0R0zPgnn6knRY_Twf1sO5mcQLytGBt6AgHkvl9IkVZDB_GcOcr7l2Af_WG0nDpvkT2SgHCz5a8RjabYA0gYFsh3jLaMy9uNhgucNuAglxZRWOoe0U7NE4XinbEAQpfise9V4bEzlNxBK08N_1VK-3iIbCOD7fRtm8K1h0Os1LKRTteF_FdZKdjtWGr28qO-hLGOpiIA_XtcuAb99xyb8LdPTMeZoOeBlpDh3seIkSVwKyUYcsJOTuWZtjjpn50uEMEaUPyhshQOOuKEeJooWvBP1NjjdEgG3aNC_VZH3TlQeocwh9an31-_10IqV_2L22CC5ILKLSUROwAoh8MU5McHuai642MoQ3TaWLUH8wuY_R1iEXmzOPVe7EyEu6S6Cb3t4OY3qvBHi75b3BW4HKeus1d3FCDc1RQLFucGXau_-7stKOiVUD0gaCwLMNOugUEWm0k3TWCq6vdMcOf6wRdM_XpAdGowUX_KEbYljKgyy1Ls1PNqYJ55cy-QcpEE4_DTkOn3Gl3huSO0ztPJOT8iW-6Z_-j2khG4MhPznd2vVhE=w510-h903-no">-->
+
+<div CLASS="Hevar">
+  <table class="table">
+    <thead class="thead-light">
+    <tr class="table1">
+      <th scope="col" class="table1">Titel</th>
+      <th scope="col" class="table1">Auteur</th>
+      <th scope="col" class="table1">Jaar van Uitgave</th>
+      <th scope="col" class="table1">Aantal bladzijden</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let Boek of boekOverzicht" class="table1">
+      <td  class="table1">{{Boek.titel}}</td>
+      <td  class="table1">{{Boek.auteur}}</td>
+      <td class="table1">{{Boek.jaarVanUitgave}}</td>
+      <td class="table1">{{Boek.aantalBladzijden}}</td>
+      <button (click)="delete(Boek.id)">Leen Boek</button>
+      <!--<button (click)="">boek toevoegen</button>-->
+    </tbody>
+  </table>
+</div>
+
+<button routerLink="/voeg-boek-toe/{{id}}">voeg boek toe</button>
 
 <button (click)="gaTerug()">ga terug</button>
+
+
+<!-- Trigger/Open The Modal -->
+<!--<button id="myBtn">Open Modal</button>-->
+
+<!--&lt;!&ndash; The Modal &ndash;&gt;-->
+<!--<div id="myModal" class="modal">-->
+
+  <!--&lt;!&ndash; Modal content &ndash;&gt;-->
+  <!--<div class="modal-content">-->
+    <!--<span class="close">&times;</span>-->
+    <!--<p>Some text in the Modal..</p>-->
+  <!--</div>-->
+
+<!--</div>-->

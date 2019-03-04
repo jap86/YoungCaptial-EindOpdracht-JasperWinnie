@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule} from '@agm/core';
 import { ZoekResultaatComponent } from './zoek-resultaat/zoek-resultaat.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,14 @@ import { ZoekResultaatComponent } from './zoek-resultaat/zoek-resultaat.componen
     MenuComponent,
     MapComponent,
     ZoekResultaatComponent,
+    HomeComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyA-JEG1g2sA_1GRs5Hot9gE5fcN9e-OIgE'}),
+    AgmCoreModule.forRoot({apiKey: 'YOUR_API_KEY'}),
     FormsModule
 
   ],

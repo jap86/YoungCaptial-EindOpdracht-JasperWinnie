@@ -44,5 +44,4 @@ export class VoegBiebToeFormComponent implements OnInit {
 
     this.voegBiebToeFormService.saveBieb(new Bieb(0, biebNaam, straat, nummer, plaats, beheerder)).subscribe();}
 
-
 }

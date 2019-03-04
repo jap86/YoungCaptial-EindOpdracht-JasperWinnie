@@ -1,9 +1,13 @@
+<app-menu></app-menu>
+
+<h2> Voeg boek toe </h2>
+
 <form [formGroup]="voegBoekToeForm" (ngSubmit)="saveBoek($event)">
   <input formControlName="titel" type="text" placeholder="titel"><br>
   <input formControlName="auteur" type="text" placeholder="auteur"><br>
   <input formControlName="jaarVanUitgave" type="text" placeholder="jaar van uitgave"><br>
   <input formControlName="aantalBladzijden" type="text" placeholder="aantal bladzijden"><br>
-  <button type="submit">Voeg Toe!</button>
 </form>
 
+<button (click)="saveBoek()">voeg boek toe</button>
 <button (click)="gaTerug()">ga terug</button>

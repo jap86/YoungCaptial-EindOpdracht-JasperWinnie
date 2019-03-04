@@ -1,37 +1,1 @@
-<nav class="menu navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="#">Menu</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" routerLink="/menu">Menu <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" routerLink="/bieb-overzicht">Ga naar de Biebs </a>
-      <a class="nav-item nav-link active" routerLink="/voeg-bieb-toe">Voeg een Bieb toe </a>
-      <form>
-        <input type="text" #boekTitel>
-        <button (click)="zoekBoekOpTitel(boekTitel.value)">Boek Zoek Boek</button>
-      </form>
-
-    </div>
-  </div>
-</nav>
-<div CLASS="Hevar">
-<table class="tabel" *ngIf="boekOverzicht">
-  <tr *ngFor="let Boek of boekOverzicht">
-    <td>{{Boek.titel}}</td>
-    <td>{{Boek.auteur}}</td>
-    <td>{{Boek.bieb.biebNaam}}</td>
-  </tr>
-</table>
-</div>
-<!--<div style="text-align: center">-->
-  <!--<div class="jumbotron">-->
-  <!--<h1 class="display-4">Welkom bij de {{title}}</h1>-->
-  <!--<p class="lead">Verbonden door boeken</p>-->
-  <!--<hr class="my-4">-->
-  <!--<img src="https://backgroundcheckall.com/wp-content/uploads/2018/10/book-background-tumblr-2.jpg">-->
-  <!--</div>-->
-<!--</div>-->
+<nav class="menu navbar-expand-lg navbar-dark bg-dark">  <a class="navbar-brand" routerLink="#">BiebApp</a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">    <span class="navbar-toggler-icon"></span>  </button>  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">    <div class="navbar-nav">      <a class="nav-item nav-link active" routerLink="/home">Home <span class="sr-only">(current)</span></a>      <a class="nav-item nav-link active" routerLink="/bieb-overzicht">Bieb Overzicht </a>      <a class="nav-item nav-link active" routerLink="/voeg-bieb-toe">Voeg een Bieb toe </a>      <form>        <input type="text" #boekTitel>        <button (click)="zoekBoekOpTitel(boekTitel.value)">Zoek Boek</button>      </form><div CLASS="Hevar">      <table class="tabel" *ngIf="boekOverzicht">        <thead class="thead-light">          <tr class="table1">            <th scope="col" class="table1">Titel</th>            <th scope="col" class="table1">Auteur</th>            <th scope="col" class="table1">Jaar van Uitgave</th>            <th scope="col" class="table1">Aantal bladzijden</th>            <th></th>          </tr>        </thead>        <tbody>          <tr *ngFor="let Boek of boekOverzicht" class="table1">            <td  class="table1">{{Boek.titel}}</td>            <td  class="table1">{{Boek.auteur}}</td>            <td class="table1">{{Boek.jaarVanUitgave}}</td>            <td class="table1">{{Boek.aantalBladzijden}}</td>            <button routerLink="/bieb/{{Boek.bieb.id}}">Ga Naar Bieb</button>        </tbody>      </table>    </div>     <!--</div>-->  <!--</div>--><!--</nav>--><!--<div CLASS="Hevar">--><!--<table class="tabel" *ngIf="boekOverzicht">-->  <!--<tr *ngFor="let Boek of boekOverzicht">-->    <!--<td>{{Boek.titel}}</td>-->    <!--<td>{{Boek.auteur}}</td>-->    <!--<td>{{Boek.bieb.biebNaam}}</td>-->  <!--</tr>--><!--</table>--><!--</div>--><!--<div style="text-align: center">-->  <!--<div class="jumbotron">-->  <!--<h1 class="display-4">Welkom bij de {{title}}</h1>-->  <!--<p class="lead">Verbonden door boeken</p>-->  <!--<hr class="my-4">-->  <!--<img src="https://backgroundcheckall.com/wp-content/uploads/2018/10/book-background-tumblr-2.jpg">-->  <!--</div>--><!--</div>-->
