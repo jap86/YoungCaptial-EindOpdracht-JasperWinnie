@@ -15,11 +15,11 @@ export class MapComponent implements OnInit {
   constructor(private map: MapService) { }
 
   ngOnInit() {
-    this.map.getLocatie().subscribe(data => {
-      console.log(data);
-      this.lat = data.latitude;
-      this.lng = data.longitude;
-    })
+    // this.map.getLocatie().subscribe(data => {
+    //   console.log(data);
+    //   this.lat = data.latitude;
+    //   this.lng = data.longitude;
+    // })
   }
 
 }
