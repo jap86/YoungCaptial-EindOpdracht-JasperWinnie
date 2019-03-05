@@ -47,11 +47,11 @@ export class VoegBoekToeFormComponent implements OnInit {
     const aantalBladzijden = this.voegBoekToeForm.controls['aantalBladzijden'].value;
 
     this.voegBoekToeFormService.saveBoek(new Boek(0,
-      titel, auteur, jaarVanUitgave, aantalBladzijden), this.id)
-      .subscribe(boek => {
-        console.log(boek);
-      }
-    );
+      titel, auteur, jaarVanUitgave, aantalBladzijden), this.id).subscribe(boek => {
+          console.log(boek);
+        }
+
+      );
     console.log("Einde method")
   }
 

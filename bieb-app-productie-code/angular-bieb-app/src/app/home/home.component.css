@@ -1,3 +1,15 @@
+h1{
+  color: white;
+}
+
+p{
+  color: white;
+}
+
+.welkomsttekst{
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
 input[type=submit],
 button {
   width:120px;
@@ -7,9 +19,8 @@ button {
   border-radius:15px;
   box-shadow:0px 0px 10px 3px rgba(0,0,0,0.2);
   background-color:#9ACD32;
-  color:#ffffff;
+  color:#FFFFFF;
   font-size:14px;
-
   cursor:hand;
   cursor:pointer;
 }

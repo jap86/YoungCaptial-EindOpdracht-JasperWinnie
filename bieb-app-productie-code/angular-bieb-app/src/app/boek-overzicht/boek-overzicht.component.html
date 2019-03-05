@@ -1,15 +1,31 @@
+<app-menu xmlns:color="http://www.w3.org/1999/xhtml"></app-menu>
+
 <h2>Boekoverzicht</h2>
 
-<table>
-  <tr *ngFor="let Boek of boekOverzicht">
-    <td>{{Boek.titel}}</td>
-    <td>{{Boek.auteur}}</td>
-    <td>{{Boek.jaarVanUitgave}}</td>
-    <td>{{Boek.aantalBladzijden}}</td>
-    <td><button (click)="delete(Boek.id)">del</button></td>
-   </tr>
-</table>
+<div CLASS="Hevar">
+  <table class="table">
+    <thead class="thead-light">
+    <tr class="table1">
+      <th scope="col" class="table1">Titel</th>
+      <th scope="col" class="table1">Auteur</th>
+      <th scope="col" class="table1">Jaar van Uitgave</th>
+      <th scope="col" class="table1">Aantal bladzijden</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
 
+    <tr *ngFor="let Boek of boekOverzicht" class="table1">
+      <td  class="table1" style=color:white><a routerLink="/boek/{{Boek.id}}">{{Boek.titel}}</a></td>
+      <td  class="table1">{{Boek.auteur}}</td>
+      <td class="table1">{{Boek.jaarVanUitgave}}</td>
+      <td class="table1">{{Boek.aantalBladzijden}}</td>
+      <button (click)="delete(Boek.id)">leen boek</button>
+    </tbody>
+  </table>
+  </div>
+
+<router-outlet></router-outlet>
 <button (click)="gaTerug()">ga terug</button>
 
 

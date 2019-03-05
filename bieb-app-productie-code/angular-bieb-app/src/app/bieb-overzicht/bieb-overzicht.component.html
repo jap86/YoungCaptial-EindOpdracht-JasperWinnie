@@ -1,25 +1,27 @@
-<div CLASS="Hevar">
-    <table class="table">
-      <thead class="thead-light">
-      <tr class="table1">
-        <th scope="col" class="table1">BiebNaam</th>
-        <th scope="col" class="table1">Plaats</th>
-        <th scope="col" class="table1">Straat</th>
-        <th scope="col" class="table1">Nummer</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let Bieb of biebOverzicht" class="table1">
-        <td  class="table1"><a routerLink="/bieb/{{Bieb.id}}">{{Bieb.biebNaam}}</a></td>
-        <td  class="table1">{{Bieb.straat}}</td>
-        <td  class="table1">{{Bieb.nummer}}</td>
-        <td  class="table1">{{Bieb.plaats}}</td>
-        <!--<td> {{Bieb.beheerder}}</td>-->
-        <td><button (click)="delete(Bieb.id)" class="delete">del</button></td>
-      </tr>
+<app-menu></app-menu>
 
-    </tbody>
-  </table>
-  <button (click)="gaTerug()">ga terug</button>
+<h2>Bieb Overzicht</h2>
+
+<div CLASS="Hevar">
+          <table class="table">
+            <thead class="thead-light">
+            <tr class="table1">
+              <th scope="col" class="table1">BiebNaam</th>
+              <th scope="col" class="table1">Plaats</th>
+              <th scope="col" class="table1">Straat</th>
+              <th scope="col" class="table1">Nummer</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let Bieb of biebOverzicht" class="table1">
+              <td  class="table1">{{Bieb.biebNaam}}</td>
+              <td  class="table1">{{Bieb.plaats}}</td>
+              <td class="table1">{{Bieb.straat}}</td>
+              <td class="table1">{{Bieb.nummer}}</td>
+              <button (click)="delete(Bieb.id)">verwijder bieb</button>
+            <button routerLink="/bieb/{{Bieb.id}}">selecteer bieb</button>
+            </tbody>
+          </table>
 </div>
+<button (click)="gaTerug()">ga terug</button>

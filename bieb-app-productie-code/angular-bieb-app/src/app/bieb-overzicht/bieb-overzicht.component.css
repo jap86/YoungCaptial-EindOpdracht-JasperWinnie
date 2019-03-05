@@ -1,3 +1,9 @@
+h2{
+  font-size: 40px;
+  font-family: Arial;
+  color: white;
+
+}
 .Hevar{
   border: 1px solid lightgray;
   box-shadow: 0 0 10px gray;
@@ -26,4 +32,19 @@
   background: none;
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   transition: all 0.3s ease 0s;
+}
+
+input[type=submit],
+button {
+  width:120px;
+  height:25px;
+  margin:0px 20px 0px 0px;
+  border:none;
+  border-radius:15px;
+  box-shadow:0px 0px 10px 3px rgba(0,0,0,0.2);
+  background-color:#9ACD32;
+  color:#FFFFFF;
+  font-size:14px;
+  cursor:hand;
+  cursor:pointer;
 }

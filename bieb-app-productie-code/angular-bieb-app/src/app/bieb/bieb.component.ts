@@ -3,6 +3,8 @@ import {Bieb} from "../Bieb";
 import {BiebService} from "../bieb.service";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
+import {BoekOverzichtService} from "../boek-overzicht.service";
+import {Boek} from "../Boek";
 
 @Component({
   selector: 'app-bieb',
@@ -12,11 +14,13 @@ import {Location} from "@angular/common";
 export class BiebComponent implements OnInit {
   bieb: Bieb;
   id: number;
+  boekOverzicht: Boek[];
 
   constructor(
     private biebService: BiebService,
     private route: ActivatedRoute,
-    private location: Location) {
+    private location: Location,
+    private boekOverzichtService: BoekOverzichtService) {
   }
 
   gaTerug(): void {
@@ -28,6 +32,7 @@ export class BiebComponent implements OnInit {
     this.biebService.get(this.id).subscribe(bieb => {
       this.getBieb(this.id)
     })
+     this.getAllBooks()
       }
 
   getBieb(id: number): void {
@@ -40,5 +45,21 @@ export class BiebComponent implements OnInit {
       }
     );
 
+  }
+
+  getAllBooks() {
+    this.boekOverzichtService.findAll(this.id).subscribe(
+      boekOverzicht => {
+        this.boekOverzicht = boekOverzicht;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  delete(id) {
+    this.boekOverzichtService.delete(id).subscribe(
+      () => this.getAllBooks()
+    );
   }
 }

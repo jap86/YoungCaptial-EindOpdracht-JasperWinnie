@@ -14,7 +14,7 @@ export class MapService {
   constructor(private http: HttpClient) { }
 
   getLocatie(){
-    return this.http.get<Location>('http://api.ipapi.com/api/check?access_key=c3d63e09b2bfe804fa18722dea1b3a72')
+    return this.http.get<Location>(KEY)
   }
 
 }

@@ -56,9 +56,11 @@ public class BoekExemplaarController {
         return this.boekExemplaarService.findByTitelOrAuteurOrderByAuteur(titel, auteur);
     }
 
-
     @GetMapping(value = "/boeken")
     public List<BoekExemplaar> vindAlleBoeken(){
         return (List<BoekExemplaar>) this.boekExemplaarService.findAll();
     }
+
+    @DeleteMapping(value= "http://localhost:8080/boek/{id}")
+    public void verwijderBoek (@PathVariable("id") long id){ this.boekExemplaarService.deleteById(id);}
 }
