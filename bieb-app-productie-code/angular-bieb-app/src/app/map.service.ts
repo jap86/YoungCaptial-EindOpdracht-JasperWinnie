@@ -13,8 +13,8 @@ export class MapService {
 
   constructor(private http: HttpClient) { }
 
-  getLocatie(){
-    return this.http.get<Location>(KEY)
-  }
+  // getLocatie(){
+  //   return this.http.get<Location>(KEY)
+  // }
 
 }
